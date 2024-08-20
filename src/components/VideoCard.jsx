@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal';
 import { addToHistory, deleteVideo } from "../services/AllApi";
 import { toast } from "react-toastify";
 
-function VideoCard({ displayVideo, setDeleteVideoStatus }) {
+function VideoCard({ displayVideo, setDeleteVideoStatus, width='18rem', imgheight = '300px' }) {
   
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -59,9 +59,9 @@ function VideoCard({ displayVideo, setDeleteVideoStatus }) {
     return (
         <>
         
-        <Card style={{ width: '18rem' }} className="mt-4" draggable onDragStart={(e)=>dragStarted(e,displayVideo.id)} >
-                <Card.Img variant="top" src={displayVideo.imageUrl}
-                    height={'250px'} style={{ padding: '5px' }} onClick={handleShow}/>
+        <Card style={{width}} className="mt-4" draggable onDragStart={(e)=>dragStarted(e,displayVideo.id)} >
+                <Card.Img variant="top" src={displayVideo.imageUrl} height={imgheight}
+                   style={{ padding: '5px' }} onClick={handleShow}/>
                 <Card.Body>
                         <div className='d-flex justify-content-between'>
                             <Card.Title >{displayVideo.caption.slice(0,20) }...</Card.Title>

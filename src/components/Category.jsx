@@ -108,22 +108,26 @@ function Category() {
       {
         allCategory?.length > 0 ? 
         allCategory?.map((item) => (
-          <div key={item?.id} className='m-3 border border-secondary p-3 rounded' droppable="true" onDragOver={(e) => onDragOver(e)} onDrop={(e) => videoDrop(e,item.id)}>
-            <div className='d-flex justify-content-between align-items-center'>
+          <div key={item?.id} className='mt-2 border border-secondary p-3 rounded' droppable="true" onDragOver={(e) => onDragOver(e)} onDrop={(e) => videoDrop(e,item.id)}>
+            <div className='flex d-flex justify-content-between align-items-center'>
               <h6 className='text-white'>{item?.categoryName}</h6>
               <Button className='btn btn-danger' onClick={() => handleDelete(item?.id)}>
                 <FontAwesomeIcon icon={faTrash} />
               </Button>
             </div>
+            
+
             {
               item.allVideos.length > 0 ?
-                item.allVideos?.map(card => (
-                  <VideoCard displayVideo={card}/>
-                  
-                ))
+              item.allVideos?.map(card => (
+                <VideoCard key={card.id} displayVideo={card }  imgheight='0px'/>
+                
+              ))
               :<p>No Category Found</p>
             }
+            
           </div>
+          
         )):<p>No Category Found</p>
       }
     <Modal show={show} onHide={handleClose} data-bs-theme='dark'>
