@@ -140,7 +140,6 @@ function Category() {
       <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Control type="text" placeholder="Enter Category Name" onChange={(e) => setCategoryName(e.target.value )} onKeyDown={handleKeyDown}/>
       </Form.Group> 
-      
     </Form>
         </Modal.Body>
         <Modal.Footer className='bg-dark'>

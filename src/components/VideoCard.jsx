@@ -58,7 +58,6 @@ function VideoCard({ displayVideo, setDeleteVideoStatus, width='18rem', imgheigh
 }
     return (
         <>
-        
         <Card style={{width}} className="mt-4" draggable onDragStart={(e)=>dragStarted(e,displayVideo.id)} >
                 <Card.Img variant="top" src={displayVideo.imageUrl} height={imgheight}
                    style={{ padding: '5px' }} onClick={handleShow}/>
